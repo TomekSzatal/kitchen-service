@@ -125,3 +125,5 @@ STATICFILES_DIRS = (BASE_DIR / "static",)
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 AUTH_USER_MODEL = "kitchen.Cook"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
