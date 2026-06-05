@@ -53,5 +53,16 @@ class CookListView(generic.ListView):
         return queryset
 
 
+class DishTypeListView(generic.ListView):
+    model = DishType
+    paginate_by = 5
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = (self.request.GET.get("q") or "").strip()
+
+        if query:
+            queryset = queryset.filter(name__icontains=query)
+
+        return queryset
 
