@@ -13,7 +13,7 @@
   </h1>
   <p>
     {% for cook in dish.cooks.all %}
-    <strong>Cook:</strong> {{ cook.username }}
+    <strong>Cook:</strong> {{ cook.first_name }} {{ cook.last_name }} - {{ cook.username }}
     {% endfor %}
   </p>
   <p>
