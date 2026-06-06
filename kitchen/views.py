@@ -110,3 +110,20 @@ class DishTypeListView(generic.ListView):
 
         return queryset
 
+
+class DishTypeCreateView(generic.CreateView):
+    model = DishType
+    fields = "__all__"
+    success_url = reverse_lazy("kitchen:dishtype-list")
+
+
+class DishTypeUpdateView(generic.UpdateView):
+    model = DishType
+    fields = "__all__"
+    success_url = reverse_lazy("kitchen:dishtype-list")
+
+
+class DishTypeDeleteView(generic.DeleteView):
+    model = DishType
+    success_url = reverse_lazy("kitchen:dishtype-list")
+
