@@ -127,6 +127,6 @@ ASSETS_ROOT = "/static/assets"
 
 AUTH_USER_MODEL = "kitchen.Cook"
 
-LOGIN_REDIRECT_URL = "/kitchen/"
+LOGIN_REDIRECT_URL = "/"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
