@@ -3,19 +3,23 @@
 {% block content %}
   <h1>
     DishType List
-    <a href="{% url 'kitchen:dishtype-create' %}" class="btn btn-primary">
+    <a href="{% url 'kitchen:dishtype-create' %}" class="btn btn-primary link-to-page">
       Create
     </a>
   </h1>
 
-  <form method="get" class="mb-3">
+  <form method="get" class="mb-1 d-flex">
     <input
       type="text"
       name="q"
-      placeholder="Search by dishtype name..."
+      placeholder="Search by dish name..."
       value="{{ request.GET.q }}"
+      class="form-control"
+      style="height: 41px;"
     >
-    <button type="submit">Search</button>
+    <button type="submit" class="btn btn-primary ms-2">
+      Search
+    </button>
   </form>
 
   {% if dishtype_list %}
