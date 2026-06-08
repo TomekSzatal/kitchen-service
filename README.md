@@ -4,7 +4,7 @@ Django project for managing cooks, dishes and dish categories in a restaurant ki
 
 ## Check it out!
 
-[Kitchen Service deployed to Render](https://your-render-url.onrender.com/)
+[Kitchen Service deployed to Render](https://kitchen-service-tomekszatal.onrender.com/cooks/)
 
 ## Installation
 
