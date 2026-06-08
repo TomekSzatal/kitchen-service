@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>
+    Cook List
+    <a href="{% url 'kitchen:cook-create' %}" class="btn btn-primary link-to-page">
+      Create
+    </a>
+  </h1>
+
+  <form method="get" class="mb-1 d-flex">
+    <input
+      type="text"
+      name="q"
+      placeholder="Search by dish name..."
+      value="{{ request.GET.q }}"
+      class="form-control"
+      style="height: 41px;"
+    >
+    <button type="submit" class="btn btn-primary ms-2">
+      Search
+    </button>
+  </form>
+
+  {% if cook_list %}
+    <table class="table">
+  `   <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Years of experience</th>
+      </tr>
+      {% for cook in cook_list %}
+        <tr>
+          <td>{{ cook.id }}</td>
+          <td>
+            <a href="{{ cook.get_absolute_url }}">
+              {{ cook.username }} {% if user == cook %} Me {% endif %}
+            </a>
+          </td>
+          <td>{{ cook.first_name }}</td>
+          <td>{{ cook.last_name }}</td>
+          <td>{{ cook.years_of_experience }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No cook yet.</p>
+  {% endif %}
+
+{% endblock %}
